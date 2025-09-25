@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baticeram - Votre référent en chape liquide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="assets/logo.jpg" alt="Baticeram Logo" class="logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+                <li><a href="#realisations">Nos réalisations</a></li>
+                <li><a href="#actualites">Actualités</a></li>
+                <li class="dropdown">
+                    <a href="#professionnels">Professionnels</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#chape-liquide">Chape liquide</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#isolation">Isolation</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#carrelage">Carrelage faïence</a>
+                </li>
+            </ul>
+            <div class="nav-contact">
+                <span class="phone">02 28 21 56 66</span>
+                <button class="btn-contact" onclick="window.location.href='contact.html'">Nous contacter</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-top">
+                    <div class="hero-text-left">
+                        <h1>Votre référent en chape liquide, pour <span class="highlight">un sol maîtrisé et durable</span></h1>
+                    </div>
+                    <div class="hero-text-right">
+                        <p>Spécialistes de la chape liquide et de l'isolation sous chape depuis plus de 30 ans.</p>
+                        <button class="btn-primary" onclick="window.location.href='devis.html'">Demander un devis</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-media">
+                        <img src="assets/img1.jpg" alt="Coulage chape liquide" class="hero-img">
+                        <video class="hero-video" autoplay muted loop>
+                            <source src="assets/video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                        <a href="#services" class="btn-discover">
+                            <span class="btn-discover-text">Découvrez nous</span>
+                            <div class="mouse-icon">
+                                <div class="mouse-scroll"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div id="chape-liquide" class="service-item animate-on-scroll animate-fade-up">
+                <div class="service-content">
+                    <h2>Notre métier : couler votre <span class="highlight-blue">chape liquide</span></h2>
+                    <p>Pensée pour les sols chauffants ou les grandes surfaces, la chape fluide garantit une mise à niveau précise et une excellente planéité.</p>
+                    <ul>
+                        <li>Chape fluide ciment ou anhydrite</li>
+                        <li>Compatible avec tous types de sols chauffants</li>
+                    </ul>
+                    <button class="btn-outline">En savoir plus</button>
+                    <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/img2.jpg" alt="Sol chauffant">
+                </div>
+            </div>
+
+            <div id="isolation" class="service-item reverse animate-on-scroll animate-fade-up">
+                <div class="service-content">
+                    <h2>Garantir <span class="highlight-yellow">l'isolation</span> de vos sols</h2>
+                    <p>Nous intégrons des isolants thermiques et acoustiques adaptés à chaque usage, pour optimiser confort et performance.</p>
+                    <ul>
+                        <li>Étude technique personnalisée</li>
+                        <li>Pose soignée, conforme aux DTU</li>
+                    </ul>
+                    <button class="btn-outline">En savoir plus</button>
+                    <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/img2.jpg" alt="Isolation sous chape">
+                </div>
+            </div>
+
+            <div id="carrelage" class="service-item animate-on-scroll animate-fade-up">
+                <div class="service-content">
+                    <h2>Poser <span class="highlight-yellow">votre carrelage</span> et votre faïence</h2>
+                    <p>Du sol aux murs, nous réalisons la pose de carrelage et de faïence avec soin et régularité. Une prestation complémentaire à la chape pour livrer un chantier complet.</p>
+                    <ul>
+                        <li>Large choix de formats et finitions</li>
+                        <li>Pose adaptée aux contraintes du chantier</li>
+                    </ul>
+                    <button class="btn-outline">En savoir plus</button>
+                    <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/img3.jpg" alt="Pose carrelage">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="qui-sommes-nous" class="about animate-on-scroll animate-fade-up">
+            <div class="about-content">
+                <h2>30 ans de terrain, ancrés dans le réel.</h2>
+                <p>À l'écoute du chantier comme de ceux qui l'habitent, nous posons la bonne solution, avec soin et méthode, sur tous types de projets, simples ou techniques.</p>
+                <button class="btn-about">Nous découvrir</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat animate-on-scroll animate-scale">
+                    <span class="stat-number">1995</span>
+                    <span class="stat-label">création de Baticeram</span>
+                </div>
+                <div class="stat animate-on-scroll animate-scale">
+                    <span class="stat-number">45 000</span>
+                    <span class="stat-label">mètres carrés coulés chaque année</span>
+                </div>
+                <div class="stat animate-on-scroll animate-scale">
+                    <span class="stat-number">+18</span>
+                    <span class="stat-label">collaborateurs sur le terrain</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="certifications animate-on-scroll animate-fade-up">
+            <h3>Formés, certifiés, engagés pour la qualité.</h3>
+            <div class="cert-items">
+                <div class="cert-item animate-on-scroll animate-fade-up">
+                    <img src="assets/logo-qualibat.svg" alt="Certification QUALIBAT">
+                    <span>Certification QUALIBAT</span>
+                </div>
+                <div class="cert-item animate-on-scroll animate-fade-up">
+                    <img src="assets/logo-qb46.JPG" alt="Chape QB46">
+                    <span>Chape QB46</span>
+                </div>
+                <div class="cert-item animate-on-scroll animate-fade-up">
+                    <img src="assets/logo-cqp.jpg" alt="CQP chef d'équipe chapiste">
+                    <span>CQP chef d'équipe chapiste</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Réalisations -->
+        <section id="realisations" class="realisations animate-on-scroll animate-fade-up">
+            <h2>Nos dernières réalisations</h2>
+            <button class="btn-outline">En voir plus</button>
+
+            <div class="realisations-grid">
+                <div class="realisation-card animate-on-scroll animate-fade-left">
+                    <img src="assets/img-real-1.jpg" alt="Chape fluide Cholet">
+                    <div class="card-content">
+                        <span class="card-type">Chape fluide</span>
+                        <h3>Coulage sur sol chauffant dans une extension à accès réduit. Intervention rapide et surface prête à carreler.</h3>
+                        <div class="card-location">
+                            <span class="location">Cholet</span>
+                            <span class="type">Maison individuelle</span>
+                        </div>
+                        <button class="btn-link">Découvrir</button>
+                    </div>
+                </div>
+
+                <div class="realisation-card animate-on-scroll animate-fade-up">
+                    <img src="assets/img-real-2.jpg" alt="Chape fluide Maine et Loire">
+                    <div class="card-content">
+                        <span class="card-type">Chape fluide</span>
+                        <h3>Coulage sur sol chauffant dans une extension à accès réduit. Intervention rapide et surface prête à carreler.</h3>
+                        <div class="card-location">
+                            <span class="location">Maine et Loire</span>
+                            <span class="type">Salle communale</span>
+                        </div>
+                        <button class="btn-link">Découvrir</button>
+                    </div>
+                </div>
+
+                <div class="realisation-card animate-on-scroll animate-fade-right">
+                    <img src="assets/img-real-3.jpg" alt="Isolation Vendée">
+                    <div class="card-content">
+                        <span class="card-type">Isolation sous chape</span>
+                        <h3>Coulage sur sol chauffant dans une extension à accès réduit. Intervention rapide et surface prête à carreler.</h3>
+                        <div class="card-location">
+                            <span class="location">Vendée</span>
+                            <span class="type">Logements collectifs</span>
+                        </div>
+                        <button class="btn-link">Découvrir</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actualités -->
+        <section id="actualites" class="actualites animate-on-scroll animate-fade-up">
+            <div class="actualites-content">
+                <h2>Nos actualités</h2>
+                <p>Restez informés de nos dernières réalisations et des évolutions de nos savoir-faire.</p>
+            </div>
+        </section>
+
+        <!-- Professionnels -->
+        <section id="professionnels" class="professionnels animate-on-scroll animate-fade-up">
+            <div class="professionnels-content">
+                <h2>Espace professionnels</h2>
+                <p>Découvrez nos solutions dédiées aux professionnels du bâtiment et nos partenariats.</p>
+            </div>
+        </section>
+
+        <!-- Zone d'intervention -->
+        <section id="zone-intervention" class="zone-intervention animate-on-scroll animate-fade-up">
+            <div class="zone-white-container">
+                <div class="zone-layout">
+                    <div class="zone-left">
+                        <h2>Où nous trouver</h2>
+
+                        <div class="zone-service">
+                            <h3>Chape liquide</h3>
+                            <p>Jusqu'à 1h autour de l'entreprise nord Vendée, ouest Maine et Loire, est Loire Atlantique.</p>
+                        </div>
+
+                        <div class="zone-service">
+                            <h3>Carrelage</h3>
+                            <p>Dans un rayon de 30-35 minutes autour de nos locaux.</p>
+                        </div>
+
+                        <div class="zone-address">
+                            <strong>7 rue du Caroil<br>44190 Gétigné</strong>
+                        </div>
+                    </div>
+
+                    <div class="zone-right">
+                        <div class="map-container">
+                            <img src="assets/carte.svg" alt="Carte zone intervention">
+                            <div class="map-marker">
+                                <div class="marker-pin"></div>
+                                <div class="marker-info">
+                                    <p>7 rue du Caroil<br>44190 Gétigné</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zone-cta">
+                    <h3>Besoin d'un devis ? d'un conseil technique ?</h3>
+                    <div class="cta-buttons">
+                        <button class="btn-linkedin">in</button>
+                        <button class="btn-contact" onclick="window.location.href='contact.html'">Contactez-nous</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo-footer.png" alt="Baticeram Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Nos activités</h4>
+                    <ul>
+                        <li><a href="#isolation">Isolation</a></li>
+                        <li><a href="#chape-liquide">Chape liquide</a></li>
+                        <li><a href="#carrelage">Carrelage faïence</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Professionnels</h4>
+                    <ul>
+                        <li><a href="#realisations">Nos réalisations</a></li>
+                        <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+                        <li><a href="#actualites">Actualités</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="#realisations">Nos réalisations</a></li>
+                        <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+                        <li><a href="#actualites">Actualités</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>02 28 21 56 66</p>
+                    <p>7 rue du Caroil<br>44190 Gétigné</p>
+                    <a href="#linkedin" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll permanent vers le bas
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        let lastScrollY = window.scrollY;
+        let scrollDirection = 'down';
+
+        // Détecter la direction du scroll
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+            lastScrollY = currentScrollY;
+        });
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && scrollDirection === 'down') {
+                    // Animation seulement en scrollant vers le bas
+                    entry.target.classList.add('animate');
+                } else if (!entry.isIntersecting && scrollDirection === 'up') {
+                    // Retirer l'animation seulement si on scroll vers le haut et l'élément n'est plus visible
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe animate-on-scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Fonction pour le logo - retour en haut avec rechargement
+            const logo = document.querySelector('.nav-brand .logo');
+            if (logo) {
+                logo.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Petit délai avant rechargement pour voir l'animation
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 800);
+                });
+            }
+        });
+
+        // Fonction pour le scroll down du bouton "Découvrez nous"
+        function scrollToNextSection() {
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Animation fluide du scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Script pour charger les données sauvegardées -->
+    <script>
+        // Charger les données depuis l'admin si elles existent
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedData = localStorage.getItem('baticeram_data');
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+
+                    // Appliquer les données sauvegardées
+                    Object.keys(data).forEach(section => {
+                        Object.keys(data[section]).forEach(field => {
+                            const value = data[section][field];
+                            const element = document.querySelector(`[data-field="${field}"]`) ||
+                                           document.querySelector(`h1:contains("${field}")`) ||
+                                           document.querySelector(`.${field}`);
+
+                            if (element) {
+                                if (element.tagName === 'IMG') {
+                                    element.src = value;
+                                } else {
+                                    element.innerHTML = value;
+                                }
+                            }
+                        });
+                    });
+
+                    console.log('Données admin appliquées au site public');
+                } catch (e) {
+                    console.error('Erreur lors du chargement des données admin:', e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

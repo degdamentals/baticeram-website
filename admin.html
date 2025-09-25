@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--
+    SYSTÈME D'ADMINISTRATION CMS BATICERAM
+    Version: 1.0
+
+    ⚠️ AVERTISSEMENT DE SÉCURITÉ ⚠️
+    Ce système est destiné aux démonstrations et au développement.
+    Pour un usage en production, implémentez une authentification
+    et une sécurisation appropriées des uploads et données.
+
+    License: MIT
+    GitHub: https://github.com/votre-username/baticeram-website
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Baticeram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body class="admin-mode">
+    <!-- Barre d'administration -->
+    <div id="admin-bar">
+        <div class="admin-bar-content">
+            <div class="admin-logo">
+                <h3>🔧 Mode Édition - Baticeram</h3>
+            </div>
+            <div class="admin-controls">
+                <button id="save-changes" class="admin-btn-primary">💾 Sauvegarder</button>
+                <button id="preview-mode" class="admin-btn-secondary">👁️ Aperçu</button>
+                <button id="exit-admin" class="admin-btn-exit">❌ Quitter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panneau d'édition -->
+    <div id="edit-panel" class="edit-panel hidden">
+        <div class="edit-panel-header">
+            <h3 id="edit-title">Éditer la section</h3>
+            <button id="close-panel" class="close-btn">×</button>
+        </div>
+        <div class="edit-panel-content">
+            <form id="edit-form">
+                <!-- Le contenu sera généré dynamiquement -->
+            </form>
+        </div>
+        <div class="edit-panel-footer">
+            <button type="button" id="cancel-edit" class="admin-btn-secondary">Annuler</button>
+            <button type="submit" form="edit-form" class="admin-btn-primary">Appliquer</button>
+        </div>
+    </div>
+
+    <!-- Overlay pour le panneau -->
+    <div id="edit-overlay" class="edit-overlay hidden"></div>
+
+    <!-- Site web avec boutons d'édition -->
+    <div id="website-content">
+        <header>
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="image-container">
+                        <img src="assets/logo.jpg" alt="Baticeram Logo" class="logo editable-image" data-field="navbar_logo">
+                        <button class="edit-image-btn" data-field="navbar_logo">📷</button>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
+                    <li><a href="#realisations">Nos réalisations</a></li>
+                    <li><a href="#actualites">Actualités</a></li>
+                    <li class="dropdown">
+                        <a href="#professionnels">Professionnels</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#chape-liquide">Chape liquide</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#isolation">Isolation</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#carrelage">Carrelage faïence</a>
+                    </li>
+                </ul>
+                <div class="nav-contact">
+                    <span class="phone editable" data-section="contact" data-field="phone">02 28 21 56 66</span>
+                    <button class="edit-btn" data-section="contact" data-field="phone">✏️</button>
+                    <button class="btn-contact" onclick="window.location.href='contact.html'">Nous contacter</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero editable-section" data-section="hero">
+                <button class="edit-section-btn" data-section="hero">✏️ Éditer cette section</button>
+                <div class="hero-content">
+                    <div class="hero-top">
+                        <div class="hero-text-left">
+                            <h1 class="editable" data-field="title">Votre référent en chape liquide, pour <span class="highlight">un sol maîtrisé et durable</span></h1>
+                        </div>
+                        <div class="hero-text-right">
+                            <p class="editable" data-field="subtitle">Spécialistes de la chape liquide et de l'isolation sous chape depuis plus de 30 ans.</p>
+                            <button class="btn-primary" onclick="window.location.href='devis.html'">Demander un devis</button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-media">
+                            <div class="image-container">
+                                <img src="assets/img1.jpg" alt="Coulage chape liquide" class="hero-img editable-image" data-field="hero_image">
+                                <button class="edit-image-btn" data-field="hero_image">📷</button>
+                            </div>
+                            <div class="video-container">
+                                <video class="hero-video editable-video" autoplay muted loop data-field="hero_video">
+                                    <source src="assets/video.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                                <button class="edit-image-btn" data-field="hero_video">🎥</button>
+                            </div>
+                            <a href="#services" class="btn-discover">
+                                <span class="btn-discover-text">Découvrez nous</span>
+                                <div class="mouse-icon">
+                                    <div class="mouse-scroll"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services editable-section" data-section="services">
+                <button class="edit-section-btn" data-section="services">✏️ Éditer cette section</button>
+
+                <div id="chape-liquide" class="service-item animate-on-scroll animate-fade-up">
+                    <div class="service-content">
+                        <h2 class="editable" data-field="service1_title">Notre métier : couler votre <span class="highlight-blue">chape liquide</span></h2>
+                        <p class="editable" data-field="service1_description">Pensée pour les sols chauffants ou les grandes surfaces, la chape fluide garantit une mise à niveau précise et une excellente planéité.</p>
+                        <ul>
+                            <li class="editable" data-field="service1_point1">Chape fluide ciment ou anhydrite</li>
+                            <li class="editable" data-field="service1_point2">Compatible avec tous types de sols chauffants</li>
+                        </ul>
+                        <button class="btn-outline">En savoir plus</button>
+                        <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/img2.jpg" alt="Sol chauffant" class="editable-image" data-field="service1_image">
+                        <button class="edit-image-btn" data-field="service1_image">📷</button>
+                    </div>
+                </div>
+
+                <div id="isolation" class="service-item reverse animate-on-scroll animate-fade-up">
+                    <div class="service-content">
+                        <h2 class="editable" data-field="service2_title">Garantir <span class="highlight-yellow">l'isolation</span> de vos sols</h2>
+                        <p class="editable" data-field="service2_description">Nous intégrons des isolants thermiques et acoustiques adaptés à chaque usage, pour optimiser confort et performance.</p>
+                        <ul>
+                            <li class="editable" data-field="service2_point1">Étude technique personnalisée</li>
+                            <li class="editable" data-field="service2_point2">Pose soignée, conforme aux DTU</li>
+                        </ul>
+                        <button class="btn-outline">En savoir plus</button>
+                        <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/img2.jpg" alt="Isolation sous chape" class="editable-image" data-field="service2_image">
+                        <button class="edit-image-btn" data-field="service2_image">📷</button>
+                    </div>
+                </div>
+
+                <div id="carrelage" class="service-item animate-on-scroll animate-fade-up">
+                    <div class="service-content">
+                        <h2 class="editable" data-field="service3_title">Poser <span class="highlight-yellow">votre carrelage</span> et votre faïence</h2>
+                        <p class="editable" data-field="service3_description">Du sol aux murs, nous réalisons la pose de carrelage et de faïence avec soin et régularité. Une prestation complémentaire à la chape pour livrer un chantier complet.</p>
+                        <ul>
+                            <li class="editable" data-field="service3_point1">Large choix de formats et finitions</li>
+                            <li class="editable" data-field="service3_point2">Pose adaptée aux contraintes du chantier</li>
+                        </ul>
+                        <button class="btn-outline">En savoir plus</button>
+                        <button class="btn-primary" onclick="window.location.href='contact.html'">Nous contacter</button>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/img3.jpg" alt="Pose carrelage" class="editable-image" data-field="service3_image">
+                        <button class="edit-image-btn" data-field="service3_image">📷</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="qui-sommes-nous" class="about animate-on-scroll animate-fade-up editable-section" data-section="about">
+                <button class="edit-section-btn" data-section="about">✏️ Éditer cette section</button>
+                <div class="about-content">
+                    <h2 class="editable" data-field="about_title">30 ans de terrain, ancrés dans le réel.</h2>
+                    <p class="editable" data-field="about_description">À l'écoute du chantier comme de ceux qui l'habitent, nous posons la bonne solution, avec soin et méthode, sur tous types de projets, simples ou techniques.</p>
+                    <button class="btn-about">Nous découvrir</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat animate-on-scroll animate-scale">
+                        <span class="stat-number editable" data-field="stat1_number">1995</span>
+                        <span class="stat-label editable" data-field="stat1_label">création de Baticeram</span>
+                    </div>
+                    <div class="stat animate-on-scroll animate-scale">
+                        <span class="stat-number editable" data-field="stat2_number">45 000</span>
+                        <span class="stat-label editable" data-field="stat2_label">mètres carrés coulés chaque année</span>
+                    </div>
+                    <div class="stat animate-on-scroll animate-scale">
+                        <span class="stat-number editable" data-field="stat3_number">+18</span>
+                        <span class="stat-label editable" data-field="stat3_label">collaborateurs sur le terrain</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section id="certifications" class="certifications animate-on-scroll animate-fade-up editable-section" data-section="certifications">
+                <button class="edit-section-btn" data-section="certifications">✏️ Éditer cette section</button>
+                <h3 class="editable" data-field="cert_title">Formés, certifiés, engagés pour la qualité.</h3>
+                <div class="cert-items">
+                    <div class="cert-item animate-on-scroll animate-fade-up">
+                        <img src="assets/logo-qualibat.svg" alt="Certification QUALIBAT" class="editable-image" data-field="cert1_image">
+                        <button class="edit-image-btn" data-field="cert1_image">📷</button>
+                        <span class="editable" data-field="cert1_name">Certification QUALIBAT</span>
+                    </div>
+                    <div class="cert-item animate-on-scroll animate-fade-up">
+                        <img src="assets/logo-qb46.JPG" alt="Chape QB46" class="editable-image" data-field="cert2_image">
+                        <button class="edit-image-btn" data-field="cert2_image">📷</button>
+                        <span class="editable" data-field="cert2_name">Chape QB46</span>
+                    </div>
+                    <div class="cert-item animate-on-scroll animate-fade-up">
+                        <img src="assets/logo-cqp.jpg" alt="CQP chef d'équipe chapiste" class="editable-image" data-field="cert3_image">
+                        <button class="edit-image-btn" data-field="cert3_image">📷</button>
+                        <span class="editable" data-field="cert3_name">CQP chef d'équipe chapiste</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zone d'intervention -->
+            <section id="zone-intervention" class="zone-intervention animate-on-scroll animate-fade-up editable-section" data-section="zone">
+                <button class="edit-section-btn" data-section="zone">✏️ Éditer cette section</button>
+                <div class="zone-white-container">
+                    <div class="zone-layout">
+                        <div class="zone-left">
+                            <h2 class="editable" data-field="zone_title">Où nous trouver</h2>
+
+                            <div class="zone-service">
+                                <h3 class="editable" data-field="zone_service1_title">Chape liquide</h3>
+                                <p class="editable" data-field="zone_service1_desc">Jusqu'à 1h autour de l'entreprise nord Vendée, ouest Maine et Loire, est Loire Atlantique.</p>
+                            </div>
+
+                            <div class="zone-service">
+                                <h3 class="editable" data-field="zone_service2_title">Carrelage</h3>
+                                <p class="editable" data-field="zone_service2_desc">Dans un rayon de 30-35 minutes autour de nos locaux.</p>
+                            </div>
+
+                            <div class="zone-address">
+                                <strong class="editable" data-field="zone_address">7 rue du Caroil<br>44190 Gétigné</strong>
+                            </div>
+                        </div>
+
+                        <div class="zone-right">
+                            <div class="map-container">
+                                <img src="assets/carte.svg" alt="Carte zone intervention" class="editable-image" data-field="zone_map">
+                                <button class="edit-image-btn" data-field="zone_map">📷</button>
+                                <div class="map-marker">
+                                    <div class="marker-pin"></div>
+                                    <div class="marker-info">
+                                        <p class="editable" data-field="zone_marker">7 rue du Caroil<br>44190 Gétigné</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zone-cta">
+                        <h3 class="editable" data-field="zone_cta_title">Besoin d'un devis ? d'un conseil technique ?</h3>
+                        <div class="cta-buttons">
+                            <button class="btn-linkedin">in</button>
+                            <button class="btn-contact" onclick="window.location.href='contact.html'">Contactez-nous</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="editable-section" data-section="footer">
+            <button class="edit-section-btn" data-section="footer">✏️ Éditer le footer</button>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo-footer.png" alt="Baticeram Logo" class="footer-logo editable-image" data-field="footer_logo">
+                    <button class="edit-image-btn" data-field="footer_logo">📷</button>
+                </div>
+
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h4 class="editable" data-field="footer_col1_title">Nos activités</h4>
+                        <ul>
+                            <li><a href="#isolation" class="editable" data-field="footer_link1">Isolation</a></li>
+                            <li><a href="#chape-liquide" class="editable" data-field="footer_link2">Chape liquide</a></li>
+                            <li><a href="#carrelage" class="editable" data-field="footer_link3">Carrelage faïence</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="editable" data-field="footer_col2_title">Professionnels</h4>
+                        <ul>
+                            <li><a href="#realisations" class="editable" data-field="footer_link4">Nos réalisations</a></li>
+                            <li><a href="#qui-sommes-nous" class="editable" data-field="footer_link5">Qui sommes nous ?</a></li>
+                            <li><a href="#actualites" class="editable" data-field="footer_link6">Actualités</a></li>
+                            <li><a href="contact.html" class="editable" data-field="footer_link7">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="editable" data-field="footer_col3_title">Liens utiles</h4>
+                        <ul>
+                            <li><a href="devis.html" class="editable" data-field="footer_link8">Demander un devis</a></li>
+                            <li><a href="#qui-sommes-nous" class="editable" data-field="footer_link9">Qui sommes nous ?</a></li>
+                            <li><a href="#actualites" class="editable" data-field="footer_link10">Actualités</a></li>
+                            <li><a href="contact.html" class="editable" data-field="footer_link11">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="editable" data-field="footer_col4_title">Contact</h4>
+                        <p class="editable" data-field="footer_phone">02 28 21 56 66</p>
+                        <p class="editable" data-field="footer_address">7 rue du Caroil<br>44190 Gétigné</p>
+                        <a href="#linkedin" class="social-link editable" data-field="footer_social">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="editable" data-field="footer_copyright">Copyright © 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="security-utils.js"></script>
+    <script src="auth.js"></script>
+    <script src="admin-script.js"></script>
+
+    <!-- Animation au scroll (repris du site principal) -->
+    <script>
+        // Animation au scroll permanent vers le bas
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        let lastScrollY = window.scrollY;
+        let scrollDirection = 'down';
+
+        // Détecter la direction du scroll
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+            lastScrollY = currentScrollY;
+        });
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && scrollDirection === 'down') {
+                    // Animation seulement en scrollant vers le bas
+                    entry.target.classList.add('animate');
+                } else if (!entry.isIntersecting && scrollDirection === 'up') {
+                    // Retirer l'animation seulement si on scroll vers le haut et l'élément n'est plus visible
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe animate-on-scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Fonction pour le logo - retour en haut avec rechargement
+            const logo = document.querySelector('.nav-brand .logo');
+            if (logo) {
+                logo.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Petit délai avant rechargement pour voir l'animation
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 800);
+                });
+            }
+        });
+
+        // Animation fluide du scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

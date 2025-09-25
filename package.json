@@ -1,0 +1,41 @@
+{
+  "name": "baticeram-website",
+  "version": "1.0.0",
+  "description": "Site web moderne avec CMS intégré pour entreprise de chape liquide",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000 || php -S localhost:8000 || echo 'Ouvrez index.html dans votre navigateur'",
+    "validate": "echo 'Ouvrez validate-project.html dans votre navigateur pour valider le projet'",
+    "admin": "echo 'Ouvrez admin.html dans votre navigateur pour accéder au CMS'",
+    "clean": "echo 'Suppression du cache localStorage' && echo 'localStorage.clear()' > clear-cache.js"
+  },
+  "keywords": [
+    "cms",
+    "website",
+    "baticeram",
+    "chape-liquide",
+    "construction",
+    "vanilla-js",
+    "html5",
+    "css3",
+    "responsive"
+  ],
+  "author": "Baticeram Team",
+  "license": "MIT",
+  "homepage": "https://github.com/votre-username/baticeram-website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/votre-username/baticeram-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-username/baticeram-website/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

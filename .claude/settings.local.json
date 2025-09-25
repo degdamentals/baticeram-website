@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start chrome admin.html)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

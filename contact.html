@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous contacter - Baticeram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="assets/logo.jpg" alt="Baticeram Logo" class="logo" onclick="window.location.href='index.html'">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#qui-sommes-nous">Qui sommes nous ?</a></li>
+                <li><a href="index.html#realisations">Nos réalisations</a></li>
+                <li><a href="index.html#actualites">Actualités</a></li>
+                <li class="dropdown">
+                    <a href="index.html#professionnels">Professionnels</a>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#chape-liquide">Chape liquide</a>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#isolation">Isolation</a>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#carrelage">Carrelage faïence</a>
+                </li>
+            </ul>
+            <div class="nav-contact">
+                <span class="phone">02 28 21 56 66</span>
+                <button class="btn-contact" onclick="window.location.href='devis.html'">Demander un devis</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section Contact -->
+        <section class="hero-contact">
+            <div class="hero-contact-content">
+                <h1>Contactez <span class="highlight">Baticeram</span></h1>
+                <p>Une question ? Un projet ? Nous sommes là pour vous accompagner.</p>
+            </div>
+        </section>
+
+        <!-- Informations de contact -->
+        <section class="contact-info-section">
+            <div class="contact-container">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">☎️</div>
+                        <h3>Téléphone</h3>
+                        <p><strong>02 28 21 56 66</strong></p>
+                        <p>Lun - Ven : 8h - 18h<br>Sam : 8h - 12h</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p><strong>contact@baticeram.fr</strong></p>
+                        <p>Réponse sous 24h<br>en période ouvrée</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">🏢</div>
+                        <h3>Adresse</h3>
+                        <p><strong>7 rue du Caroil<br>44190 Gétigné</strong></p>
+                        <p>Loire-Atlantique<br>Pays de la Loire</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulaire de contact -->
+        <section class="contact-form-section">
+            <div class="contact-form-container">
+                <div class="form-intro">
+                    <h2>Écrivez-nous</h2>
+                    <p>Remplissez ce formulaire et nous vous recontacterons dans les plus brefs délais.</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-prenom">Prénom *</label>
+                            <input type="text" id="contact-prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-nom">Nom *</label>
+                            <input type="text" id="contact-nom" name="nom" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-telephone">Téléphone</label>
+                            <input type="tel" id="contact-telephone" name="telephone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-sujet">Sujet *</label>
+                        <select id="contact-sujet" name="sujet" required>
+                            <option value="">Choisissez un sujet</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="planning">Question sur planning</option>
+                            <option value="technique">Question technique</option>
+                            <option value="sav">Service après-vente</option>
+                            <option value="partenariat">Partenariat</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="message" rows="6" required placeholder="Décrivez votre demande..."></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary btn-large">Envoyer mon message</button>
+                        <p class="form-note">* Champs obligatoires. Nous nous engageons à vous répondre sous 24h.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Zone d'intervention -->
+        <section class="contact-zone-intervention">
+            <div class="contact-zone-container">
+                <h2>Notre zone d'intervention</h2>
+
+                <div class="zone-details">
+                    <div class="zone-info">
+                        <div class="zone-service-detail">
+                            <h3>🚛 Chape liquide</h3>
+                            <p>Intervention jusqu'à <strong>1h autour de l'entreprise</strong> :<br>
+                               Nord Vendée, ouest Maine-et-Loire, est Loire-Atlantique</p>
+                        </div>
+
+                        <div class="zone-service-detail">
+                            <h3>🔨 Carrelage & Faïence</h3>
+                            <p>Service dans un <strong>rayon de 30-35 minutes</strong><br>
+                               autour de nos locaux de Gétigné</p>
+                        </div>
+
+                        <div class="zone-cities">
+                            <h4>Villes principales :</h4>
+                            <ul>
+                                <li>Clisson</li>
+                                <li>Vallet</li>
+                                <li>La Roche-sur-Yon</li>
+                                <li>Cholet</li>
+                                <li>Ancenis</li>
+                                <li>Saint-Philbert-de-Grand-Lieu</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="zone-map">
+                        <div class="map-container">
+                            <img src="assets/carte.svg" alt="Carte zone intervention Baticeram">
+                            <div class="map-marker">
+                                <div class="marker-pin"></div>
+                                <div class="marker-info">
+                                    <p>7 rue du Caroil<br>44190 Gétigné</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Urgence -->
+        <section class="urgence-section">
+            <div class="urgence-content">
+                <h2>🚨 Urgence ?</h2>
+                <p>Pour toute urgence ou intervention immédiate</p>
+                <a href="tel:0228215666" class="btn-urgence">Appelez maintenant : 02 28 21 56 66</a>
+                <p class="urgence-note">Disponible du lundi au vendredi de 8h à 18h, samedi de 8h à 12h</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo-footer.png" alt="Baticeram Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Nos activités</h4>
+                    <ul>
+                        <li><a href="index.html#isolation">Isolation</a></li>
+                        <li><a href="index.html#chape-liquide">Chape liquide</a></li>
+                        <li><a href="index.html#carrelage">Carrelage faïence</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Professionnels</h4>
+                    <ul>
+                        <li><a href="index.html#realisations">Nos réalisations</a></li>
+                        <li><a href="index.html#qui-sommes-nous">Qui sommes nous ?</a></li>
+                        <li><a href="index.html#actualites">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="devis.html">Demander un devis</a></li>
+                        <li><a href="index.html#qui-sommes-nous">Qui sommes nous ?</a></li>
+                        <li><a href="index.html#actualites">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>02 28 21 56 66</p>
+                    <p>7 rue du Caroil<br>44190 Gétigné</p>
+                    <a href="#linkedin" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Simulation d'envoi
+            const submitBtn = document.querySelector('.btn-large');
+            const originalText = submitBtn.textContent;
+
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                alert('Votre message a été envoyé avec succès ! Nous vous répondrons sous 24h.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    </script>
+
+    <!-- Scripts de sécurité -->
+    <script src="security-utils.js"></script>
+    <script src="form-security.js"></script>
+</body>
+</html>
