@@ -58,3 +58,7 @@ build/
 TODO.txt
 NOTES.md
 test.html
+
+# Fichiers Claude
+.claude/
+.claude_history
