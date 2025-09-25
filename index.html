@@ -12,7 +12,15 @@
             <div class="nav-brand">
                 <img src="assets/logo.jpg" alt="Baticeram Logo" class="logo">
             </div>
-            <ul class="nav-menu">
+
+            <!-- Menu hamburger pour mobile -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#qui-sommes-nous">Qui sommes nous ?</a></li>
                 <li><a href="#realisations">Nos réalisations</a></li>
                 <li><a href="#actualites">Actualités</a></li>
@@ -29,11 +37,14 @@
                     <a href="#carrelage">Carrelage faïence</a>
                 </li>
             </ul>
-            <div class="nav-contact">
+            <div class="nav-contact" id="nav-contact">
                 <span class="phone">02 28 21 56 66</span>
                 <button class="btn-contact" onclick="window.location.href='contact.html'">Nous contacter</button>
             </div>
         </nav>
+
+        <!-- Overlay pour fermer le menu mobile -->
+        <div class="mobile-menu-overlay" id="mobile-overlay"></div>
     </header>
 
     <main>
@@ -392,7 +403,56 @@
                         block: 'start'
                     });
                 }
+
+                // Fermer le menu mobile après clic sur un lien
+                closeMobileMenu();
             });
+        });
+
+        // Gestion du menu hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navContact = document.getElementById('nav-contact');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navContact.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+
+            // Empêcher le scroll du body quand le menu est ouvert
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navContact.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners pour le menu mobile
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+
+        // Fermer le menu lors du redimensionnement de la fenêtre
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer le menu avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
         });
     </script>
 
