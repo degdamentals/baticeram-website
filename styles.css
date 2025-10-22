@@ -504,6 +504,34 @@ header {
 
 .highlight-yellow {
     color: #FFA500;
+    position: relative;
+    display: inline;
+    z-index: 1;
+}
+
+.highlight-yellow::before {
+    content: '';
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    height: 0.5em;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: highlightSlide 1.5s ease-out 0.3s forwards;
+    opacity: 0.4;
+    border-radius: 2px;
+}
+
+@keyframes highlightSlide {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 .service-content p {
