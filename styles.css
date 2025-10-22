@@ -504,33 +504,18 @@ header {
 
 .highlight-yellow {
     color: #FFA500;
-    position: relative;
-    display: inline;
-    z-index: 1;
+    font-weight: 600;
+    animation: highlightPulse 2s ease-in-out infinite;
 }
 
-.highlight-yellow::before {
-    content: '';
-    position: absolute;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0;
-    height: 0.5em;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: highlightSlide 1.5s ease-out 0.3s forwards;
-    opacity: 0.4;
-    border-radius: 2px;
-}
-
-@keyframes highlightSlide {
-    0% {
-        transform: scaleX(0);
+@keyframes highlightPulse {
+    0%, 100% {
+        color: #FFA500;
+        text-shadow: 0 0 8px rgba(255, 165, 0, 0.3);
     }
-    100% {
-        transform: scaleX(1);
+    50% {
+        color: #FF8C00;
+        text-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
     }
 }
 
