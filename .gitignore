@@ -64,3 +64,19 @@ test.html
 # Fichiers Claude
 .claude/
 .claude_history
+
+# Documentation et fichiers Markdown
+*.md
+README.md
+GUIDE_*.md
+CHECKLIST.md
+OPTIMISATION_*.md
+
+# Dossiers inutiles
+save/
+Projet 1/
+Wordpress formation/
+
+# Fichiers de build CSS
+postcss.config.js
+styles-backup.css
